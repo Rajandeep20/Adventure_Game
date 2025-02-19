@@ -42,3 +42,30 @@ function renderQuestion() {
                 questionContainer.innerHTML = "Thank you for playing!";
                 break;
         }
+         
+             if (answerSelected) {
+                 nextButton.style.display = 'block'; 
+             } else {
+             nextButton.style.display = 'none'; 
+    }
+
+function addAnswerButton(text, newState) {
+    const answersContainer = document.getElementById('answers');
+    const button = document.createElement('button');
+    button.innerText = text;
+    button.onclick = () => {
+        currentState = newState;
+        answerSelected = true; 
+        renderQuestion(); 
+    };
+    answersContainer.appendChild(button);
+}
+
+function restartGame() {
+    currentState = 'start'; 
+    answerSelected = false; 
+    renderQuestion(); 
+}
+
+
+renderQuestion();
