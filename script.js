@@ -49,11 +49,11 @@ function renderQuestion() {
              nextButton.style.display = 'none'; 
     }
 
-            function addAnswerButton(text, newState) {
-            const answersContainer = document.getElementById('answers');
-            const button = document.createElement('button');
-            button.innerText = text;
-            button.onclick = () => {
+function addAnswerButton(text, newState) {
+    const answersContainer = document.getElementById('answers');
+    const button = document.createElement('button');
+    button.innerText = text;
+    button.onclick = () => {
         currentState = newState;
         answerSelected = true; 
         renderQuestion(); 
